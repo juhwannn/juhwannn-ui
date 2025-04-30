@@ -19,7 +19,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
 
       - name: GitHub Packages 인증
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: 의존성 설치
         run: npm install
