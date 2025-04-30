@@ -1,10 +1,11 @@
 {
   "name": "@juhwannn/ui",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "private": false,
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "style": "dist/styles.css",
   "files": [
     "dist"
   ],
@@ -27,6 +28,7 @@
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-strip": "^3.0.0",
     "postcss": "^8.0.0",
+    "postcss-import": "^16.1.0",
     "rollup": "^3.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0"

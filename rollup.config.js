@@ -4,6 +4,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import babel from '@rollup/plugin-babel';
 import strip from '@rollup/plugin-strip';
+import postcssImport from 'postcss-import';
 
 export default {
   input: 'src/index.js',
@@ -26,9 +27,10 @@ export default {
       directives: ['use client'],
     }),
     postcss({
+      plugins: [postcssImport()],
       modules: true,
-      extract: false,
-      inject: { insertAt: 'top' },
+      extract: 'styles.css',
+      inject: false,
     }),
   ],
 };

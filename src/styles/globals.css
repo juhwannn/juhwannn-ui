@@ -1,9 +1,9 @@
-@import './theme/colors.css';
-@import './theme/typography.css';
-@import './theme/spacing.css';
-@import './theme/layout.css';
-@import './theme/radius.css';
-@import './theme/transition.css';
+@import url('./theme/colors.css');
+@import url('./theme/typography.css');
+@import url('./theme/spacing.css');
+@import url('./theme/layout.css');
+@import url('./theme/radius.css');
+@import url('./theme/transition.css');
 
 /* --- 기본 리셋 --- */
 *,
