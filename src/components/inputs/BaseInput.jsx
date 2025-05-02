@@ -32,9 +32,7 @@ export default function BaseInput({
       {!loading && icon && <span className={styles['input-icon']}>{icon}</span>}
       <input className={inputCls} disabled={disabled || loading} {...rest} />
       {loading && (
-        <span className={styles['input-spinner']} aria-hidden="true">
-          ⏳
-        </span>
+        <span className={styles['input-spinner']} aria-hidden="true" />
       )}
     </div>
   );

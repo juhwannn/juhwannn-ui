@@ -1,7 +1,13 @@
+:root {
+  /* Ensure spinner keyframes available */
+  --spinner-size: 1em;
+}
+
 .base-input-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
+  width: auto;
 }
 
 .base-input {
@@ -10,13 +16,13 @@
   width: 100%;
   padding: var(--spacing-md) var(--spacing-lg);
   font-size: var(--font-size-base);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background: var(--color-background);
-  color: var(--color-text);
-  transition:
-    border-color var(--transition-duration) var(--transition-ease),
-    background var(--transition-duration) var(--transition-ease);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--background);
+  color: var(--text);
+  transition: border-color var(--transition-duration) var(--transition-ease),
+    background var(--transition-duration) var(--transition-ease),
+    color var(--transition-duration) var(--transition-ease);
 }
 
 .base-input:focus {
@@ -24,6 +30,7 @@
   outline: none;
 }
 
+/* Variants */
 .variant-primary {
   border-color: var(--primary-bg);
 }
@@ -51,37 +58,50 @@
 .variant-warning:focus {
   border-color: var(--warning-hover-bg);
 }
-
+ㅋ
+/* Sizes */
 .size-small {
-  font-size: 0.8rem;
-  padding: 0.25rem 0.5rem;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 .size-medium {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 .size-large {
-  font-size: 1.25rem;
-  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
 }
 
+/* Disabled */
 .disabled {
-  background: var(--color-border);
+  background: var(--border-color);
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
+/* Loading: hide input text */
 .loading {
   color: transparent;
   pointer-events: none;
 }
 
-.input-icon {
-  margin-left: var(--spacing-md);
-  display: inline-flex;
-}
-
+/* Spinner Animation */
 .input-spinner {
   position: absolute;
+  top: 50%;
   right: var(--spacing-lg);
-  font-size: 1.2em;
+  transform: translateY(-50%);
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border: 2px solid var(--border-color);
+  border-top-color: var(--primary-bg);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }

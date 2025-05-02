@@ -1,10 +1,12 @@
 :root {
   --color-background: #ffffff;
   --color-text: #111111;
-  --color-border: #e5e7eb;
+
   --color-header-bg: #ffffff;
   --color-sidebar-bg: #f9f9f9;
   --color-link: var(--primary-bg);
+
+  --border-color: #e5e7eb;
 
   --primary-bg: #0070f3;
   --primary-color: #ffffff;
@@ -30,7 +32,7 @@
 [data-theme='dark'] {
   --color-background: #0d1117;
   --color-text: #f9f9f9;
-  --color-border: #30363d;
+  --border-color: #30363d;
   --color-header-bg: #161b22;
   --color-sidebar-bg: #161b22;
 
@@ -58,7 +60,7 @@
 [data-theme='solarized'] {
   --color-background: #fdf6e3;
   --color-text: #657b83;
-  --color-border: #eee8d5;
+  --border-color: #eee8d5;
   --color-header-bg: #eee8d5;
   --color-sidebar-bg: #eee8d5;
 
