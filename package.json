@@ -1,6 +1,6 @@
 {
   "name": "@juhwannn/ui",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "private": false,
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "build:watch": "rollup -c -w",
     "prepare": "npm run build"
   },
   "publishConfig": {
