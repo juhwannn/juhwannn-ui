@@ -6,6 +6,7 @@ export { default as BaseListItem } from './components/lists/BaseListItem';
 export { default as BaseSection } from './components/sections/BaseSection';
 export { default as Page } from './components/layouts/Page';
 export { default as BaseLabel } from './components/labels/BaseLabel';
+export { default as BaseCard } from './components/cards/BaseCard';
 export { H1, H2 } from './components/typography/Heading';
 
 import './styles/globals.css';

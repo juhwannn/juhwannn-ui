@@ -84,3 +84,43 @@
   --warning-hover-bg: #cb4b16;
   --warning-hover-color: #fdf6e3;
 }
+
+/* ─── GitHub Theme ───────────────────────────────────────── */
+[data-theme='github'] {
+  /* Backgrounds */
+  --color-background: #f6f8fa; /* 페이지 배경 */
+  --color-bg-surface: #ffffff; /* 카드·콘솔 표면 */
+  --color-bg-inset: #f0f3f6; /* 인셋 영역 */
+
+  /* Text */
+  --color-text-primary: #24292e; /* 기본 텍스트 */
+  --color-text-secondary: #57606a; /* 보조 텍스트 */
+  --color-text-inverse: #ffffff; /* 다크 위에 올릴 때 */
+
+  /* Borders & Dividers */
+  --color-border-default: #e1e4e8; /* 기본 테두리 */
+  --color-border-strong: #d1d5da; /* 강조 테두리 */
+
+  /* Primary / Link */
+  --color-primary-500: #0366d6; /* 링크·버튼 메인 */
+  --color-primary-700: #0356b6; /* 호버·액티브 */
+  --color-link-default: var(--color-primary-500);
+  --color-link-hover: var(--color-primary-700);
+
+  /* Status */
+  --color-success-500: #28a745; /* 성공 배지, Toast */
+  --color-success-700: #1e7e34;
+  --color-warning-500: #ffd33d; /* 경고 배지 */
+  --color-warning-700: #e3b341;
+  --color-danger-500: #d73a49; /* 오류·삭제 배지 */
+  --color-danger-700: #b31d28;
+
+  /* Shadows / Elevation */
+  --shadow-elevation-sm: 0 1px 3px rgba(27, 31, 35, 0.12);
+  --shadow-elevation-md: 0 4px 6px rgba(27, 31, 35, 0.15);
+
+  /* Semantic aliases (optional) */
+  --color-card-bg: var(--color-bg-surface);
+  --color-header-bg: var(--color-bg-surface);
+  --color-sidebar-bg: var(--color-bg-inset);
+}
