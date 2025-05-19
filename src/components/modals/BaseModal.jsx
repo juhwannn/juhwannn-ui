@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './BaseModal.module.css';
+import ReactDOM from 'react-dom';
 
 export default function BaseModal({
   isOpen,
@@ -28,7 +29,7 @@ export default function BaseModal({
 
   if (!isOpen) return null;
 
-  return (
+  return ReactDOM.createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <header className={styles.header}>
@@ -44,6 +45,7 @@ export default function BaseModal({
         <div className={styles.content}>{children}</div>
         {footer && <footer className={styles.footer}>{footer}</footer>}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
