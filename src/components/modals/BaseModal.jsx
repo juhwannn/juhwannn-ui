@@ -8,6 +8,7 @@ export default function BaseModal({
   title,
   children,
   footer,
+  scope = 'fullscreen',
 }) {
   useEffect(() => {
     function handleKeyDown(e) {
@@ -29,8 +30,11 @@ export default function BaseModal({
 
   if (!isOpen) return null;
 
-  return ReactDOM.createPortal(
-    <div className={styles.overlay} onClick={onClose}>
+  const overlayClass =
+    scope === 'fullscreen' ? styles.overlayFixed : styles.overlayEmbedded;
+
+  return (
+    <div className={overlayClass} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <header className={styles.header}>
           <h2 className={styles.title}>{title}</h2>
