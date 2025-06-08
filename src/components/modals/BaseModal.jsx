@@ -11,7 +11,9 @@ export default function BaseModal({
 }) {
   useEffect(() => {
     function handleKeyDown(e) {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+      }
     }
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -25,7 +27,9 @@ export default function BaseModal({
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    return null;
+  }
 
   const modalContent = (
     <div className={styles.overlay} onClick={onClose}>

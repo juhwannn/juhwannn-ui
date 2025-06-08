@@ -29,8 +29,8 @@ export default {
     postcss({
       plugins: [postcssImport()],
       modules: true,
-      extract: 'styles.css',
-      inject: false,
+      inject: true,
+      extract: false,
     }),
   ],
 };
