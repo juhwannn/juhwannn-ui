@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import styles from './BaseModal.module.css';
 
 export default function BaseModal({
@@ -10,9 +11,7 @@ export default function BaseModal({
 }) {
   useEffect(() => {
     function handleKeyDown(e) {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     }
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,7 +27,7 @@ export default function BaseModal({
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <header className={styles.header}>
@@ -46,4 +45,6 @@ export default function BaseModal({
       </div>
     </div>
   );
+
+  return ReactDOM.createPortal(modalContent, document.body);
 }
