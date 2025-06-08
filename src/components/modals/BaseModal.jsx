@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styles from './BaseModal.module.css';
-import ReactDOM from 'react-dom';
 
 export default function BaseModal({
   isOpen,
@@ -8,7 +7,6 @@ export default function BaseModal({
   title,
   children,
   footer,
-  scope = 'fullscreen',
 }) {
   useEffect(() => {
     function handleKeyDown(e) {
@@ -30,11 +28,8 @@ export default function BaseModal({
 
   if (!isOpen) return null;
 
-  const overlayClass =
-    scope === 'fullscreen' ? styles.overlayFixed : styles.overlayEmbedded;
-
   return (
-    <div className={overlayClass} onClick={onClose}>
+    <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <header className={styles.header}>
           <h2 className={styles.title}>{title}</h2>
@@ -49,7 +44,6 @@ export default function BaseModal({
         <div className={styles.content}>{children}</div>
         {footer && <footer className={styles.footer}>{footer}</footer>}
       </div>
-    </div>,
-    document.body
+    </div>
   );
 }
